@@ -1,0 +1,56 @@
+2024-07-09 16:13:18,900 - Flask_Server - INFO - Starting Flask_Server
+2024-07-09 16:13:18,906 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:13:18,906 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:13:18,940 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:13:18,940 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:13:18,941 - Flask_Server - INFO - type of db_conf.checkbox = 
+2024-07-09 16:13:18,941 - Flask_Server - INFO - default db color initiated ...
+2024-07-09 16:13:18,943 - App_cfg - ERROR - Load settings error: [Errno 2] No such file or directory: '/home/aol/Desktop/Develop/tappas/apps/h8/gstreamer/general/instance_segmentation/data/app_cfg.yaml'
+2024-07-09 16:13:18,943 - Flask_Server - INFO - Flask Server is running on port: 3306
+2024-07-09 16:13:18,962 - Flask_Server - INFO - Server shutting down
+2024-07-09 16:17:50,713 - Flask_Server - INFO - Starting Flask_Server
+2024-07-09 16:17:50,716 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:17:50,716 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:17:50,737 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:17:50,737 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:17:50,737 - Flask_Server - INFO - type of db_conf.checkbox = 
+2024-07-09 16:17:50,738 - Flask_Server - INFO - default db color initiated ...
+2024-07-09 16:17:50,739 - App_cfg - ERROR - Load settings error: [Errno 2] No such file or directory: '/home/aol/Desktop/Develop/tappas/apps/h8/gstreamer/general/instance_segmentation/data/app_cfg.yaml'
+2024-07-09 16:17:50,739 - Flask_Server - INFO - Flask Server is running on port: 47760
+2024-07-09 16:17:55,373 - Flask_Server - INFO - Server shutting down
+2024-07-09 16:22:36,723 - Flask_Server - INFO - Starting Flask_Server
+2024-07-09 16:22:36,726 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:22:36,726 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:22:36,745 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:22:36,745 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:22:36,745 - Flask_Server - INFO - type of db_conf.checkbox = 
+2024-07-09 16:22:36,746 - Flask_Server - INFO - default db color initiated ...
+2024-07-09 16:22:36,747 - App_cfg - ERROR - Load settings error: [Errno 2] No such file or directory: '/home/aol/Desktop/Develop/tappas/apps/h8/gstreamer/general/instance_segmentation/data/app_cfg.yaml'
+2024-07-09 16:22:36,747 - Flask_Server - INFO - Flask Server is running on port: 47760
+2024-07-09 16:22:37,382 - Flask_Server - DEBUG - Route POST '/add_source' called
+2024-07-09 16:22:37,384 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:22:37,384 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:22:37,752 - Flask_Server - ERROR - Failed to add new source: add_source() missing 1 required positional argument: 'nx_server'
+2024-07-09 16:22:37,753 - Flask_Server - DEBUG - Schdueling Gstreamer Pipeline restart at: 2024-07-09 06:52:42.753058+00:00
+2024-07-09 16:22:42,754 - Flask_Server - INFO - Gstreamer Pipeline restart initiated
+2024-07-09 16:23:01,103 - Flask_Server - DEBUG - Route POST '/heartbeat_camera' called by CamID: 117c9f70-03ea-5f41-7875-d71f1a18019e
+2024-07-09 16:23:01,104 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:23:01,104 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:23:01,105 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:23:01,105 - Config - DEBUG - Successfully fetched config from database
+2024-07-09 16:23:01,261 - Flask_Server - INFO - Server shutting down
+2024-07-10 08:48:26,229 - Flask_Server - INFO - Starting Flask_Server
+2024-07-10 08:48:26,233 - Config - DEBUG - Successfully fetched config from database
+2024-07-10 08:48:26,233 - Config - DEBUG - Successfully fetched config from database
+2024-07-10 08:48:26,255 - Config - DEBUG - Successfully fetched config from database
+2024-07-10 08:48:26,255 - Config - DEBUG - Successfully fetched config from database
+2024-07-10 08:48:26,255 - Flask_Server - INFO - type of db_conf.checkbox = 
+2024-07-10 08:48:26,256 - Flask_Server - INFO - default db color initiated ...
+2024-07-10 08:48:26,257 - App_cfg - ERROR - Load settings error: [Errno 2] No such file or directory: '/home/aol/Desktop/Develop/tappas/apps/h8/gstreamer/general/instance_segmentation/data/app_cfg.yaml'
+2024-07-10 08:48:26,257 - Flask_Server - INFO - Flask Server is running on port: 47760
+2024-07-10 08:48:28,145 - Flask_Server - DEBUG - Route POST '/heartbeat_camera' called by CamID: 117c9f70-03ea-5f41-7875-d71f1a18019e
+2024-07-10 08:48:28,146 - Config - DEBUG - Successfully fetched config from database
+2024-07-10 08:48:28,146 - Config - DEBUG - Successfully fetched config from database
+2024-07-10 08:48:28,147 - Config - DEBUG - Successfully fetched config from database
+2024-07-10 08:48:28,147 - Config - DEBUG - Successfully fetched config from database
+2024-07-10 08:48:31,284 - Flask_Server - INFO - Server shutting down
