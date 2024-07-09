@@ -10,13 +10,14 @@ function init_variables() {
     readonly RESOURCES_DIR="$TAPPAS_WORKSPACE/apps/h8/gstreamer/general/instance_segmentation/resources"
 
     readonly DEFAULT_POSTPROCESS_SO="$POSTPROCESS_DIR/libyolov5seg_post.so"
-    DEFAULT_VIDEO_SOURCE="rtsp://admin:Aol2021!@192.168.1.64:554/Streaming/channels/101"
+    #DEFAULT_VIDEO_SOURCE="rtsp://admin:Aol2021!@192.168.1.64:554/Streaming/channels/101"
+    readonly DEFAULT_VIDEO_SOURCE="$RESOURCES_DIR/instance_segmentation.mp4"
     readonly DEFAULT_HEF_PATH="$RESOURCES_DIR/yolov5n_seg.hef"
     readonly DEFAULT_NETWORK_NAME="yolov5seg"
     readonly json_config_path="$RESOURCES_DIR/configs/yolov5seg.json"
     PYTHON_MODULE_PATH="$TAPPAS_WORKSPACE/apps/h8/gstreamer/general/instance_segmentation/main.py"
-    KAFKA_CONSUMER="$TAPPAS_WORKSPACE/apps/h8/gstreamer/general/instance_segmentation/kafka_consumer.py"
-    DB_PATH="$TAPPAS_WORKSPACE/apps/h8/gstreamer/general/instance_segmentation/detections.db"
+    #KAFKA_PRODUCER="$TAPPAS_WORKSPACE/apps/h8/gstreamer/general/instance_segmentation/kafka_producer.py"
+    #DB_PATH="$TAPPAS_WORKSPACE/apps/h8/gstreamer/general/instance_segmentation/detections.db"
     TRAIN_MODEL="$TAPPAS_WORKSPACE/apps/h8/gstreamer/general/instance_segmentation/train_knn_model.py"
 
     #python3 $TRAIN_MODEL
@@ -75,30 +76,30 @@ function parse_args() {
     done
 }
 
-function create_rtsp_source() {
-    rtspsrc_location="rtsp://admin:Aol2021\!@192.168.1.65:554/Streaming/channels/101"
-    rtph_depay="rtph264depay"
-    avdec="avdec_h264"
+# function create_rtsp_source() {
+#     rtspsrc_location="rtsp://admin:Aol2021\!@192.168.1.65:554/Streaming/channels/101"
+#     rtph_depay="rtph264depay"
+#     avdec="avdec_h264"
 
-    source_element="rtspsrc location=$rtspsrc_location name=source_0 ! \
-                rtponvifparse ! \
-                $rtph_depay ! \
-                queue name=hailo_decode0 leaky=no max-size-buffers=100 max-size-bytes=0 max-size-time=0 ! \
-                $avdec ! \
-                queue name=hailo_scale0 leaky=no max-size-buffers=100 max-size-bytes=0 max-size-time=0 ! \
-                videoscale ! videoconvert"
-}
+#     source_element="rtspsrc location=$rtspsrc_location name=source_0 ! \
+#                 rtponvifparse ! \
+#                 $rtph_depay ! \
+#                 queue name=hailo_decode0 leaky=no max-size-buffers=100 max-size-bytes=0 max-size-time=0 ! \
+#                 $avdec ! \
+#                 queue name=hailo_scale0 leaky=no max-size-buffers=100 max-size-bytes=0 max-size-time=0 ! \
+#                 videoscale ! videoconvert"
+# }
 
 init_variables $@
 parse_args $@
 create_rtsp_source
 
-# # If the video provided is from a camera
-# if [[ $video_source =~ "/dev/video" ]]; then
-#     source_element="v4l2src device=$video_source name=src_0 ! videoflip video-direction=horiz"
-# else
-#     source_element="filesrc location=$video_source name=src_0 ! decodebin"
-# fi
+# If the video provided is from a camera
+if [[ $video_source =~ "/dev/video" ]]; then
+    source_element="v4l2src device=$video_source name=src_0 ! videoflip video-direction=horiz"
+else
+    source_element="filesrc location=$video_source name=src_0 ! decodebin"
+fi
 
 PIPELINE="gst-launch-1.0 \
     $source_element ! \
@@ -124,7 +125,7 @@ if [ "$print_gst_launch_only" = true ]; then
 else
     echo "Running pipeline"
     eval ${PIPELINE} 
-    #python3 $KAFKA_CONSUMER $DB_PATH &
+    #python3 $KAFKA_PRODUCER &
     wait
 fi
 

@@ -3,7 +3,7 @@ import json
 
 # Kafka broker configuration
 KAFKA_BROKER = 'localhost:9092'  
-TOPIC = 'detection_results'  # Kafka topic to send detection results
+TOPIC = 'color_detection'  # Kafka topic to send detection results
 
 # Create Kafka producer
 producer = KafkaProducer(bootstrap_servers=KAFKA_BROKER, value_serializer=lambda v: json.dumps(v).encode('utf-8'))

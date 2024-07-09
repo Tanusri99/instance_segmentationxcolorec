@@ -8,7 +8,7 @@ import cv2
 import json
 from color_utils import detect_colors, get_dominant_color
 from kafka_producer import send_detection_results_to_kafka
-from kafka_consumer import start_consumer
+
 
 def run(video_frame: VideoFrame):
     try:
@@ -107,9 +107,6 @@ def run(video_frame: VideoFrame):
         return Gst.FlowReturn.ERROR
 
 
-def process_frame():
+
     return Gst.FlowReturn.OK
 
-if __name__ == "__main__":
-    start_consumer()
-    process_frame()
